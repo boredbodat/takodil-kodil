@@ -12,6 +12,13 @@
             padding: 20px;
             background-color: #f0f0f0;
         }
+        .controls {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
         button {
             padding: 10px 20px;
             margin: 5px;
@@ -25,13 +32,35 @@
         button:hover {
             background-color: #45a049;
         }
+        .tempo-control {
+            margin: 20px 0;
+        }
+        input[type="range"] {
+            width: 200px;
+            margin: 0 10px;
+        }
+        .note-display {
+            font-size: 24px;
+            margin: 20px 0;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
     <h1>Tone.js Music Project</h1>
-    <div id="controls">
+    <div class="controls">
         <button id="start">Start Audio</button>
-        <button id="playNote">Play Note</button>
+        <button id="playNote">Play</button>
+        
+        <div class="tempo-control">
+            <label for="tempo">Tempo: </label>
+            <input type="range" id="tempo" min="60" max="200" value="120">
+            <span id="tempoValue">120</span> BPM
+        </div>
+        
+        <div class="note-display">
+            Current Pattern: C4 - E4 - G4 - C5 - G4 - E4
+        </div>
     </div>
     <script src="node_modules/tone/build/Tone.js"></script>
     <script src="app.js"></script>
